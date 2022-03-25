@@ -1,22 +1,16 @@
-// Подключаем библиотеку для создания бота
 require('dotenv').config();
 const TelegramApi = require('node-telegram-bot-api');
 const translate = require('translate-google');
-// Создаём переменную для токина
-// Создаём объект бота
+
 const { token } = process.env;
 const bot = new TelegramApi(token, { polling: true });
 const aztroJs = require('aztro-js');
-require('dotenv').config();
 
-// const property = 'color';
-// const day = 'today';
 
 bot.setMyCommands(
   [
     { command: '/start', description: 'Начало' },
     { command: '/info', description: 'Информация о проекте' },
-    // { command: '/lol', description: 'lol btn' },
     { command: '/aries', description: 'Гороскоп для Овна' },
     { command: '/taurus', description: 'Гороскоп для Тельца' },
     { command: '/gemini', description: 'Гороскоп для Близнецов' },
@@ -47,9 +41,6 @@ bot.on('message', async (msg) => {
 ${'/aries'}♈️, ${'/taurus'}♉️, ${'/gemini'}♊️, ${'/cancer'}♋️, ${'/leo'}♌️, ${'/virgo'}♍️, ${'/libra'}♎️, ${'/scorpious'}♏️, ${'/sagittarius'}♐️, ${'/capricornus'}♑️, ${'/aquarius'}♒️, ${'/pisces'}♓️`);
   }
 
-  // if (text === '/lol') {
-  //   await bot.KeyboardButton(chatId, 'весело');
-  // }
   if (text === '/info') {
     await bot.sendMessage(chatId, `В совей работе я использую сразу несколько API:
 
