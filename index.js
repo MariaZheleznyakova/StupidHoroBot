@@ -15,7 +15,7 @@ require('dotenv').config();
 bot.setMyCommands(
   [
     { command: '/start', description: 'Начало' },
-    { command: '/info', description: 'Инфо' },
+    { command: '/info', description: 'Информация о проекте' },
     // { command: '/lol', description: 'lol btn' },
     { command: '/aries', description: 'Гороскоп для Овна' },
     { command: '/taurus', description: 'Гороскоп для Тельца' },
